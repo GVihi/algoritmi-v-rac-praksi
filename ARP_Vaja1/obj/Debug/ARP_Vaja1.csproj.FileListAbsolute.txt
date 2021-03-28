@@ -1,0 +1,7 @@
+E:\Visual Studio Projects\ARP_Vaja1\obj\Debug\ARP_Vaja1.csprojAssemblyReference.cache
+E:\Visual Studio Projects\ARP_Vaja1\obj\Debug\ARP_Vaja1.csproj.CoreCompileInputs.cache
+E:\Visual Studio Projects\ARP_Vaja1\bin\Debug\vaja1.exe.config
+E:\Visual Studio Projects\ARP_Vaja1\bin\Debug\vaja1.exe
+E:\Visual Studio Projects\ARP_Vaja1\bin\Debug\vaja1.pdb
+E:\Visual Studio Projects\ARP_Vaja1\obj\Debug\vaja1.exe
+E:\Visual Studio Projects\ARP_Vaja1\obj\Debug\vaja1.pdb
