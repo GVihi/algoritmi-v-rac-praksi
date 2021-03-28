@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteligentniUrnik", "InteligentniUrnik.csproj", "{4E218106-800D-4B0A-B430-92D5D341D253}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E218106-800D-4B0A-B430-92D5D341D253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E218106-800D-4B0A-B430-92D5D341D253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E218106-800D-4B0A-B430-92D5D341D253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E218106-800D-4B0A-B430-92D5D341D253}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F254CB14-BB92-4980-86FA-CE2CD50ACE5D}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Playlist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <pMedia>
+    <Media>
+      <Title>E:\Nvidia ShadowPlay\Rocket League\Rocket League 2020.10.09 - 19.44.52.01.mp4</Title>
+      <Director>defaultValue</Director>
+      <DiskLocation>E:\Nvidia ShadowPlay\Rocket League</DiskLocation>
+      <Year>9999</Year>
+      <Lenght>90</Lenght>
+    </Media>
+    <Media>
+      <Title>E:\Nvidia ShadowPlay\Rocket League\Rocket League 2020.10.14 - 16.48.32.01.mp4</Title>
+      <Director>defaultValue</Director>
+      <DiskLocation>E:\Nvidia ShadowPlay\Rocket League</DiskLocation>
+      <Year>9999</Year>
+      <Lenght>90</Lenght>
+    </Media>
+    <Media>
+      <Title>E:\Nvidia ShadowPlay\Rocket League\Rocket League 2020.10.18 - 17.57.02.02.mp4</Title>
+      <Director>defaultValue</Director>
+      <DiskLocation>E:\Nvidia ShadowPlay\Rocket League</DiskLocation>
+      <Year>9999</Year>
+      <Lenght>90</Lenght>
+    </Media>
+    <Media>
+      <Title>E:\Nvidia ShadowPlay\Rocket League\Rocket League 2020.11.04 - 17.22.32.01.mp4</Title>
+      <Director>defaultValue</Director>
+      <DiskLocation>E:\Nvidia ShadowPlay\Rocket League</DiskLocation>
+      <Year>9999</Year>
+      <Lenght>90</Lenght>
+    </Media>
+  </pMedia>
+</Playlist>

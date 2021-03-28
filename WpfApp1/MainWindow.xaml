@@ -1,0 +1,220 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Media Player" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ButtonDictionary.xaml"/>
+                <ResourceDictionary Source="WindowDictionary.xaml"/>
+                <ResourceDictionary Source="DockPanelDictionary.xaml"/>
+                <ResourceDictionary Source="ScrollDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.Style>
+        <StaticResource ResourceKey="WindowStyle"/>
+    </Window.Style>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Menu -->
+        <DockPanel Grid.Row="0">
+            <Menu Style="{StaticResource DockPanelStyle}" DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Style="{StaticResource MenuItemStyle}" x:Name="exitButton" Click="exitButton_Click" Header="Exit"/>
+                    <MenuItem Style="{StaticResource MenuItemStyle}" x:Name="importButton" Click="importButton_Click" Header="Import..."/>
+                    <MenuItem Style="{StaticResource MenuItemStyle}" x:Name="exportButton" Click="exportButton_Click" Header="Export..."/>
+                </MenuItem>
+
+                <MenuItem Header="List">
+                    <MenuItem Style="{StaticResource MenuItemStyle}" x:Name="addButton" Click="addButton_Click" Header="Add"/>
+                    <MenuItem Style="{StaticResource MenuItemStyle}" x:Name="removeButton" Click="removeButton_Click" Header="Remove"/>
+                    <MenuItem Style="{StaticResource MenuItemStyle}" x:Name="editButton" Click="editButton_Click" Header="Edit"/>
+                </MenuItem>
+                <MenuItem Header="Tools">
+                    <MenuItem Style="{StaticResource MenuItemStyle}" x:Name="settingsButton" Click="settingsButton_Click" Header="Settings"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="199*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="596*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ListView -->
+            <Grid Grid.Column="0">
+                <ListView x:Name="listViewPlaylist" MouseDoubleClick="listViewPlaylist_MouseDoubleClick" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ShowGridLines="True" Name="grid">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock FontWeight="Bold" Grid.Row="0" TextAlignment="Center" Text="{Binding Title}"/>
+                                <TextBlock Grid.Row="1" Text="{Binding Director}"/>
+                                <TextBlock Grid.Row="2" Text="{Binding DiskLocation}"/>
+                                <TextBlock Grid.Row="3" Text="{Binding Year}"/>
+                                <TextBlock Grid.Row="4" Text="{Binding Lenght}"/>
+                                <TextBlock Grid.Row="5" Text="{Binding Played, StringFormat='Already played: {0}'}"/>
+                            </Grid>
+
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding Played}" Value="True">
+                                    <Setter TargetName="grid" Property="Background" Value="#77FF77"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Style="{StaticResource MenuItemStyle}" x:Name="addButton2" Click="addButton_Click" Header="Add"/>
+                        <MenuItem Style="{StaticResource MenuItemStyle}" x:Name="removeButton2" Click="removeButton_Click" Header="Remove"/>
+                        <MenuItem Style="{StaticResource MenuItemStyle}" x:Name="editButton2" Click="editButton_Click" Header="Edit"/>
+                        </ContextMenu>
+                    </ListView.ContextMenu>
+                </ListView>
+            </Grid>
+
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch"/>
+
+            <!-- MediaElement -->
+            <StackPanel Grid.Column="2" Margin="0 1 1 0">
+                <Canvas>
+                    <Ellipse Width="10" Height="10" Fill="White" Canvas.Left="300" Canvas.Top="130">
+                        <Ellipse.Triggers>
+                            <EventTrigger RoutedEvent="Ellipse.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimationUsingPath Duration="0:00:01" Source="X" Storyboard.TargetProperty="(Canvas.Left)" PathGeometry="{StaticResource Krog}"/>
+                                        <DoubleAnimationUsingPath Duration="0:00:01" Source="Y" Storyboard.TargetProperty="(Canvas.Top)" PathGeometry="{StaticResource Krog}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Ellipse.Triggers>
+                    </Ellipse>
+                </Canvas>
+                <Canvas>
+                    <Ellipse Width="10" Height="10" Fill="White" Canvas.Left="300" Canvas.Top="200">
+                        <Ellipse.Triggers>
+                            <EventTrigger RoutedEvent="Ellipse.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimationUsingPath Duration="0:00:01" Source="X" Storyboard.TargetProperty="(Canvas.Left)" PathGeometry="{StaticResource Krog2}"/>
+                                        <DoubleAnimationUsingPath Duration="0:00:01" Source="Y" Storyboard.TargetProperty="(Canvas.Top)" PathGeometry="{StaticResource Krog2}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Ellipse.Triggers>
+                    </Ellipse>
+                </Canvas>
+                <Label x:Name="loadingLabel" Foreground="White" FontFamily="Helvetica" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                <!-- <MediaElement Source="assets/movieIcon.jpg"/> -->
+                <local:MediaPlayer x:Name="mPlayer"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="197"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Time Remaining Label-->
+                <Grid Grid.Column="0">
+                    <Label x:Name="currentTime" MouseDoubleClick="currentTime_MouseDoubleClick" Content="00:00:00" HorizontalContentAlignment="Center"/>
+                </Grid>
+
+                <!-- Slider -->
+                <Grid Grid.Column="1">
+                    <Slider>
+                        <Slider.Background>
+                            <SolidColorBrush x:Name="Ozadje"/>
+                        </Slider.Background>
+                        <Slider.Triggers>
+                            <EventTrigger RoutedEvent="Window.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="#f083da" Duration="0:00:15" AutoReverse="True" RepeatBehavior="Forever" Storyboard.TargetName="Ozadje" Storyboard.TargetProperty="Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Slider.Triggers>
+                    </Slider>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Label x:Name="totalTime" Content="00:00:00" HorizontalContentAlignment="Center"/>
+                </Grid>
+            </Grid>
+
+            <!-- Media Buttons -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Style="{StaticResource ButtonStyle}" x:Name="shuffleButton" Click="shuffleButton_Click" Margin="2" Grid.Column="0" BorderThickness="0">
+                    <StackPanel>
+                        <Image Source="{StaticResource shuffle}" Height="26" Width="63"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}" x:Name="prevButton" Click="prevButton_Click" Margin="2" Grid.Column="1" BorderThickness="0">
+                    <StackPanel>
+                        <Image Source="{StaticResource prev}" Height="32" Width="71" RenderTransformOrigin="0.514,0.188"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}" x:Name="playPauseButton" Click="playPauseButton_Click" Margin="2" Grid.Column="2" BorderThickness="0" >
+                    <StackPanel>
+                        <Image x:Name="playPauseImage" Source="{DynamicResource play}" Height="32" Width="71"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}" x:Name="nextButton" Click="nextButton_Click" Margin="2" Grid.Column="3" BorderThickness="0">
+                    <StackPanel>
+                        <Image Source="{StaticResource next}" Height="32" Width="71"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}" x:Name="repeatButton" Click="repeatButton_Click" Margin="2" Grid.Column="4" BorderThickness="0">
+                    <StackPanel>
+                        <Image Source="{StaticResource repeat}" Height="24" Width="67"/>
+                    </StackPanel>
+                </Button>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

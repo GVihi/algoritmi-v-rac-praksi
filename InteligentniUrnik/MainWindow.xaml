@@ -1,0 +1,230 @@
+﻿<Window x:Class="InteligentniUrnik.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InteligentniUrnik"
+        mc:Ignorable="d"
+        Title="Inteligentni Urnik" Height="450" Width="800"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize">
+    
+    
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border CornerRadius="10" Grid.ColumnSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#7be9f6" Offset="0.0"/>
+                    <GradientStop Color="#f083da" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <!-- Seznam Opravil -->
+        <Grid Margin="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="Tasks"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"
+                       FontWeight="Light"
+                       FontFamily="Helvetica"
+                       Foreground="White"/>
+
+            <Border Grid.Row="1">
+            <ListView Background="Transparent" x:Name="listViewTasks" BorderThickness="0">
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="FontFamily" Value="Helvetica"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontSize" Value="15"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    
+
+                </ListView>
+            </Border>
+
+            <TextBox x:Name="textBoxTasks"
+                     Margin="2"
+                     Grid.Row="2"
+                     FontFamily="Helvetica"
+                     FontWeight="Light"
+                     Foreground="White"
+                     Background="Transparent"
+                     BorderThickness="0"
+                     Opacity="0.5"
+                     Text="New task..."
+                     FontSize="25"
+                     GotFocus="textBoxTasks_GotFocus"
+                     />
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button FontWeight="Light" Foreground="White" FontFamily="Helvetica" FontSize="15" BorderThickness="0" Background="Transparent" x:Name="addButton" Click="addButton_Click" Margin="3" Content="Add" Grid.Column="0"/>
+                <Button FontWeight="Light" Foreground="White" FontFamily="Helvetica" FontSize="15" BorderThickness="0" Background="Transparent" x:Name="removeButton" Click="removeButton_Click" Margin="3" Content="Remove" Grid.Column="1"/>
+                <Button FontWeight="Light" Foreground="White" FontFamily="Helvetica" FontSize="15" BorderThickness="0" Background="Transparent" x:Name="saveButton" Click="saveButton_Click" Margin="3" Content="Save" Grid.Column="2"/>
+            </Grid>
+        </Grid>
+        
+        <!-- Koledar -->
+        <Grid Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <DockPanel Grid.Row="0">
+                    <TextBlock FontSize="35"
+                           Text="November"
+                           HorizontalAlignment="Center"
+                           Margin="225 0 0 0"
+                           FontWeight="Light"
+                           FontFamily="Helvetica"
+                           Foreground="White"
+                           x:Name="monthTextBlock"/>
+
+                    <Button x:Name="buttonClose" Click="buttonClose_Click" Margin="0 0 5 0" HorizontalAlignment="Right" Foreground="Red" FontWeight="Light" BorderThickness="0" Background="Transparent" FontSize="30" Content="X"/>
+                </DockPanel>
+
+                <!-- Prvi Teden -->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Click="dayButton_Click"  x:Name="day1" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Content="1"/>
+                    <Button Click="dayButton_Click" x:Name="day2" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Content="2"/>
+                    <Button Click="dayButton_Click" x:Name="day3" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Content="3"/>
+                    <Button Click="dayButton_Click" x:Name="day4" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Content="4"/>
+                    <Button Click="dayButton_Click" x:Name="day5" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Content="5"/>
+                    <Button Click="dayButton_Click" x:Name="day6" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Content="6"/>
+                    <Button Click="dayButton_Click" x:Name="day7" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Content="7"/>
+                </Grid>
+
+                <!-- Drugi Teden -->
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Click="dayButton_Click" x:Name="day8" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Content="8"/>
+                    <Button Click="dayButton_Click" x:Name="day9" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Content="9"/>
+                    <Button Click="dayButton_Click" x:Name="day10" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Content="10"/>
+                    <Button Click="dayButton_Click" x:Name="day11" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Content="11"/>
+                    <Button Click="dayButton_Click" x:Name="day12" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Content="12"/>
+                    <Button Click="dayButton_Click" x:Name="day13" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Content="13"/>
+                    <Button Click="dayButton_Click" x:Name="day14" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Content="14"/>
+                </Grid>
+
+                <!-- Tretji Teden -->
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Click="dayButton_Click" x:Name="day15" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Content="15"/>
+                    <Button Click="dayButton_Click" x:Name="day16" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Content="16"/>
+                    <Button Click="dayButton_Click" x:Name="day17" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Content="17"/>
+                    <Button Click="dayButton_Click" x:Name="day18" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Content="18"/>
+                    <Button Click="dayButton_Click" x:Name="day19" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Content="19"/>
+                    <Button Click="dayButton_Click" x:Name="day20" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Content="20"/>
+                    <Button Click="dayButton_Click" x:Name="day21" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Content="21"/>
+                </Grid>
+
+                <!-- Četrti Teden -->
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Click="dayButton_Click" x:Name="day22" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Content="22"/>
+                    <Button Click="dayButton_Click" x:Name="day23" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Content="23"/>
+                    <Button Click="dayButton_Click" x:Name="day24" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Content="24"/>
+                    <Button Click="dayButton_Click" x:Name="day25" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Content="25"/>
+                    <Button Click="dayButton_Click" x:Name="day26" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Content="26"/>
+                    <Button Click="dayButton_Click" x:Name="day27" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Content="27"/>
+                    <Button Click="dayButton_Click" x:Name="day28" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Content="28"/>
+                </Grid>
+
+                <!-- Peti Teden -->
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Click="dayButton_Click" x:Name="day29" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Content="29"/>
+                    <Button Click="dayButton_Click" x:Name="day30" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Content="30"/>
+                    <Button Click="dayButton_Click" x:Name="day31" FontWeight="Light" FontFamily="Helvetica" BorderThickness="0" Background="Transparent" Width="60" Height="60" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Content="31"/>
+                </Grid>
+
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Click="backButton_Click" x:Name="backButton" FontWeight="Light" BorderThickness="0" Background="Transparent" FontSize="30" Content="&lt;" Grid.Column="0"/>
+                    <Button Click="forwardButton_Click" x:Name="forwardButton" FontWeight="Light" BorderThickness="0" Background="Transparent" FontSize="30" Content="&gt;" Grid.Column="1"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</Window>
