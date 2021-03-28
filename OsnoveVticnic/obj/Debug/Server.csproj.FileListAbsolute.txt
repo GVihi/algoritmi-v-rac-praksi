@@ -1,0 +1,7 @@
+E:\Visual Studio Projects\OsnoveVticnic\bin\Debug\OsnoveVticnic.exe.config
+E:\Visual Studio Projects\OsnoveVticnic\bin\Debug\OsnoveVticnic.exe
+E:\Visual Studio Projects\OsnoveVticnic\bin\Debug\OsnoveVticnic.pdb
+E:\Visual Studio Projects\OsnoveVticnic\obj\Debug\Server.csprojAssemblyReference.cache
+E:\Visual Studio Projects\OsnoveVticnic\obj\Debug\Server.csproj.CoreCompileInputs.cache
+E:\Visual Studio Projects\OsnoveVticnic\obj\Debug\OsnoveVticnic.exe
+E:\Visual Studio Projects\OsnoveVticnic\obj\Debug\OsnoveVticnic.pdb

@@ -1,0 +1,15 @@
+E:\Visual Studio Projects\Krizec_Krozec\bin\Debug\Krizec_Krozec.exe.config
+E:\Visual Studio Projects\Krizec_Krozec\bin\Debug\Krizec_Krozec.exe
+E:\Visual Studio Projects\Krizec_Krozec\bin\Debug\Krizec_Krozec.pdb
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\Krizec_Krozec.csprojAssemblyReference.cache
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\MainWindow.g.cs
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\App.g.cs
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\Krizec_Krozec_MarkupCompile.cache
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\Krizec_Krozec_MarkupCompile.lref
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\MainWindow.baml
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\Krizec_Krozec.g.resources
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\Krizec_Krozec.Properties.Resources.resources
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\Krizec_Krozec.csproj.GenerateResource.cache
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\Krizec_Krozec.csproj.CoreCompileInputs.cache
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\Krizec_Krozec.exe
+E:\Visual Studio Projects\Krizec_Krozec\obj\Debug\Krizec_Krozec.pdb

@@ -1,0 +1,15 @@
+E:\Visual Studio Projects\BlockChain\bin\Debug\BlockChain.exe.config
+E:\Visual Studio Projects\BlockChain\bin\Debug\BlockChain.exe
+E:\Visual Studio Projects\BlockChain\bin\Debug\BlockChain.pdb
+E:\Visual Studio Projects\BlockChain\obj\Debug\BlockChain.csprojAssemblyReference.cache
+E:\Visual Studio Projects\BlockChain\obj\Debug\MainWindow.g.cs
+E:\Visual Studio Projects\BlockChain\obj\Debug\App.g.cs
+E:\Visual Studio Projects\BlockChain\obj\Debug\BlockChain_MarkupCompile.cache
+E:\Visual Studio Projects\BlockChain\obj\Debug\BlockChain_MarkupCompile.lref
+E:\Visual Studio Projects\BlockChain\obj\Debug\MainWindow.baml
+E:\Visual Studio Projects\BlockChain\obj\Debug\BlockChain.g.resources
+E:\Visual Studio Projects\BlockChain\obj\Debug\BlockChain.Properties.Resources.resources
+E:\Visual Studio Projects\BlockChain\obj\Debug\BlockChain.csproj.GenerateResource.cache
+E:\Visual Studio Projects\BlockChain\obj\Debug\BlockChain.csproj.CoreCompileInputs.cache
+E:\Visual Studio Projects\BlockChain\obj\Debug\BlockChain.exe
+E:\Visual Studio Projects\BlockChain\obj\Debug\BlockChain.pdb

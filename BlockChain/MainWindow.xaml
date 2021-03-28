@@ -1,0 +1,61 @@
+﻿<Window x:Class="BlockChain.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlockChain"
+        mc:Ignorable="d"
+        Title="BlockChain" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Content="Node name:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Grid.Column="1" Width="90" Height="30"/>
+            <Button Grid.Column="2" Width="90" Height="30" Content="Connect" Click="Button_Click"/>
+            <Button x:Name="mineButton" Grid.Column="3" Width="90" Height="30" Content="Mine" Click="Button_Click_1"/>
+            <TextBox x:Name="portBox" Grid.Column="5" Width="90" Height="30"/>
+            <Button Grid.Column="6" Width="90" Height="30" Content="Connect port" Click="Button_Click_2"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Content="Status:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label x:Name="onlineStatus" Grid.Column="1" Content="OFFLINE" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Grid.Column="0" HorizontalScrollBarVisibility="Auto" Height="335">
+                <TextBlock x:Name="blocksTextBlock" Background="GhostWhite" Margin="10"  Text="Blockchain ledger..."/>
+            </ScrollViewer>
+
+            <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" Height="335">
+                <TextBlock x:Name="miningTextBlock" Background="GhostWhite" Margin="10"  Text="Mining"/>
+            </ScrollViewer>
+        </Grid>
+        
+    </Grid>
+</Window>
